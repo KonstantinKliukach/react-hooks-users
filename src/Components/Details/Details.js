@@ -1,10 +1,11 @@
 import React from 'react';
 
-import './Card.css'
+import './Details.css'
 
-const Card = ({ person }) => {
-  const { avatar, name, details: { city, company, position} } = person
-  return (
+const Details = ({ info: { name, id } }) => {
+  return null
+  
+  /*return (
     <div className='card'>
       <img src={avatar} alt='avatar' className='avatar'/>
       <h1 className="card-header">{name}</h1>
@@ -12,7 +13,7 @@ const Card = ({ person }) => {
       <p className="person-about">{`City: ${company}`}</p>
       <p className="person-about">{`City: ${position}`}</p>
     </div>
-  )
+  )*/
 }
 
-export default Card
+export default Details

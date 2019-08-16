@@ -1,34 +1,40 @@
 import React, { useState, useEffect } from 'react';
 
 import List from '../List'
-import Card from '../Card'
+import Details from '../Details'
 
 import './App.css';
-
-const person = {
-  id: 1,
-  name: "Dorthy McClure Sr.",
-  avatar: "https://i.pravatar.cc/300",
-  details: {
-      city: "Sipesfort",
-      company: "Hilll LLC",
-      position: "Regional Identity Supervisor"
-  }
-}
+import loader from '../../img/blue_loading.gif'
 
 const App = () => {
   const [list, getList] = useState([])
-  const [active, setActive] = useState('')
-  return (
+  const [active, setActive] = useState()
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async() => {
+    try {
+      const response = await fetch('../../data/users.json')
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      console.log(response)
+    } catch(e) {
+      console.log(e)
+    }
+  }, [])
+
+
+  return list.length ? (
     <div className='app'>
       <div className='column'>
         <List />
       </div>
       <div className='column'>
-        <Card person={person} />
+        {active && <Details info={active} />}
       </div>
     </div>
-  )
+  ) : <div className='app'><img className='loadingGif' src={loader} alt='loading'/></div>
+  
 }
 
 export default App;
