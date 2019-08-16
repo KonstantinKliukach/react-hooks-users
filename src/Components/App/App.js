@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import UI from '../UI'
+import Loader from '../Loader'
 
 import './App.css';
-import loader from '../../img/blue_loading.gif'
 
 const url = 'https://raw.githubusercontent.com/KonstantinKliukach/react-hooks-users/master/src/data/users.json'
 
@@ -38,7 +38,7 @@ const App = () => {
     <div className='app'>
       {isReady ?
         <UI active={active} list={list} onClick={onClick} /> :
-        <img src={loader} alt='loading'/>
+        <Loader />
       }
     </div>
   )

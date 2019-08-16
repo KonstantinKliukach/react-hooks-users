@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+import Loader from '../Loader'
+
 import './Details.css'
-import loader from '../../img/blue_loading.gif'
 
 const Details = ({ info}) => {
   const [userInfo, setUserInfo] = useState('')
@@ -31,7 +32,7 @@ const Details = ({ info}) => {
 
   if (isLoading) {
     return (
-      <img src={loader} alt='loading'/>
+      <Loader />
     )
   }
 
