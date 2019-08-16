@@ -5,7 +5,7 @@ import UI from '../UI'
 import './App.css';
 import loader from '../../img/blue_loading.gif'
 
-const url = 'https://raw.githubusercontent.com/KonstantinKliukach/ra-19_8-1/master/src/data/users.json'
+const url = 'https://raw.githubusercontent.com/KonstantinKliukach/react-hooks-users/master/src/data/users.json'
 
 const App = () => {
   const [isReady, setReady] = useState(false)

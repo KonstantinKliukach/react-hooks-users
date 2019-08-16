@@ -13,7 +13,7 @@ const Details = ({ info}) => {
         return
       }
       setLoading(true)
-      const url =`https://raw.githubusercontent.com/KonstantinKliukach/ra-19_8-1/master/src/data/${info}.json`
+      const url =`https://raw.githubusercontent.com/KonstantinKliukach/react-hooks-users/master/src/data/${info}.json`
       try {
         const response = await fetch(url)
         if (!response.ok) {
