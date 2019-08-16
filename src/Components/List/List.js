@@ -4,11 +4,19 @@ import './List.css';
 
 const List = ( {list, active, onClick} ) =>{
   return(
-    <div class="list">
-      <a className="list-item" href="#">Regular link</a>
-      <a className="list-item" href="#">Active link</a>
-      <a className="list-item" href="#">Another link</a>
-    </div>
+    <ul className="list">
+      {list.map(user => {
+        const className = user.id === active ? 'list-item active' : 'list-item'
+        return (
+          <li key={user.id} 
+            className={className} 
+            onClick={()=>{onClick(user.id)}}>
+            {user.name}
+          </li>
+          )
+        })
+      }  
+    </ul>
   )
   
 }
