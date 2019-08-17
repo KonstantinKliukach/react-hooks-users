@@ -31,7 +31,10 @@ const App = () => {
   }, [])
 
   const onClick = (id) => {
-    id === active ? setActive('') : setActive(id)
+    if (id === active) {
+      return
+    } 
+    setActive(id)
   }
 
   return (
